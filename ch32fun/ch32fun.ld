@@ -133,6 +133,10 @@ MEMORY
 	#else
 		#error "Unknown MCU package"
 	#endif
+#elif TARGET_MCU_LD == 12
+	/* CH32M030 */
+	FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 64K
+	RAM (xrw)  : ORIGIN = 0x20000000, LENGTH = 12K
 #else
 	#error "Unknown MCU target"
 #endif
