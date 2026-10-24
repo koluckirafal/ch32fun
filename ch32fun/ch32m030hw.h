@@ -1,5 +1,5 @@
-#ifndef _CH32M030HW_H
-#define _CH32M030HW_H
+#ifndef TODO_HARDWARE_H
+#define TODO_HARDWARE_H
 
 #include "ch32fun.h"
 
@@ -10,50 +10,49 @@ extern "C" {
 #endif
 
 /* Interrupt Number Definition, according to the selected device */
-/* Interrupt Number Definition for CH32M030, per RM section 5.3 Table 5-1 */
 typedef enum IRQn
 {
-    /******  RISC-V Processor Core Interrupts ******************************************/
-    NonMaskableInt_IRQn  = 2,   /* 2  Non-Maskable Interrupt                    */
-    EXC_IRQn             = 3,   /* 3  Exception Interrupt                       */
-    Ecall_M_Mode_IRQn    = 5,   /* 5  Machine-mode environment call             */
-    Ecall_U_Mode_IRQn    = 8,   /* 8  User-mode environment call                */
-    Break_Point_IRQn     = 9,   /* 9  Breakpoint                                */
-    SysTick_IRQn         = 12,  /* 12 System Timer Interrupt                    */
-    Software_IRQn        = 14,  /* 14 Software Interrupt                        */
+	/******  RISC-V Processor Core Interrupts ***********************************/
+	NonMaskableInt_IRQn =  2,  /*  2 Non-Maskable Interrupt                     */
+	EXC_IRQn            =  3,  /*  3 Exception Interrupt                        */
+	Ecall_M_Mode_IRQn   =  5,  /*  5 Machine-mode environment call              */
+	Ecall_U_Mode_IRQn   =  8,  /*  8 User-mode environment call                 */
+	Break_Point_IRQn    =  9,  /*  9 Breakpoint                                 */
+	SysTick_IRQn        = 12,  /* 12 System Timer Interrupt                     */
+	Software_IRQn       = 14,  /* 14 Software Interrupt                         */
 
-    /******  CH32M030 Peripheral Interrupts ********************************************/
-    WWDG_IRQn            = 16,  /* Window Watchdog Interrupt                    */
-    OPA_IRQn             = 17,  /* OPA global interrupt (moved from 48 on X035) */
-    FLASH_IRQn           = 18,  /* FLASH global Interrupt                       */
-    RCC_IRQn             = 19,  /* RCC global Interrupt                         */
-    EXTI7_0_IRQn         = 20,  /* External Line[7:0] Interrupts                */
-    AWU_IRQn             = 21,  /* AWU (Auto Wake-Up) global Interrupt          */
-    DMA1_Channel1_IRQn   = 22,  /* DMA1 Channel 1 global Interrupt              */
-    DMA1_Channel2_IRQn   = 23,  /* DMA1 Channel 2 global Interrupt              */
-    DMA1_Channel3_IRQn   = 24,  /* DMA1 Channel 3 global Interrupt              */
-    DMA1_Channel4_IRQn   = 25,  /* DMA1 Channel 4 global Interrupt              */
-    DMA1_Channel5_IRQn   = 26,  /* DMA1 Channel 5 global Interrupt              */
-    DMA1_Channel6_IRQn   = 27,  /* DMA1 Channel 6 global Interrupt              */
-    DMA1_Channel7_IRQn   = 28,  /* DMA1 Channel 7 global Interrupt              */
-    ADC_IRQn             = 29,  /* ADC global Interrupt                         */
-    I2C1_EV_IRQn         = 30,  /* I2C1 Event Interrupt                         */
-    I2C1_ER_IRQn         = 31,  /* I2C1 Error Interrupt                         */
-    UART1_IRQn           = 32,  /* UART1 global Interrupt (no synchronous mode) */
-    EXTI15_8_IRQn        = 33,  /* External Line[15:8] Interrupts               */
-    TIM1_BRK_IRQn        = 34,  /* TIM1 Break Interrupt                         */
-    TIM1_UP_IRQn         = 35,  /* TIM1 Update Interrupt                        */
-    TIM1_TRG_IRQn        = 36,  /* TIM1 Trigger Interrupt                       */
-    TIM1_CC_IRQn         = 37,  /* TIM1 Capture/Compare Interrupt               */
-    TIM2_IRQn            = 38,  /* TIM2 global Interrupt                        */
-    USBPD0_IRQn          = 39,  /* USB Power Delivery controller 0              */
-    USBPD0_WKUP_IRQn     = 40,  /* USBPD0 Wake-Up Interrupt                     */
-    USBPD1_IRQn          = 41,  /* USB Power Delivery controller 1              */
-    USBPD1_WKUP_IRQn     = 42,  /* USBPD1 Wake-Up Interrupt                     */
-    TIM3_IRQn            = 43,  /* TIM3 global Interrupt                        */
-    SPI1_IRQn            = 44,  /* SPI1 global Interrupt (moved from 33 on X035)*/
-    USBFS_IRQn           = 45,  /* USB Full-Speed global Interrupt              */
-    USBFS_WakeUp_IRQn    = 46,  /* USBFS Wake-Up Interrupt                      */
+	/******  CH32M030 Peripheral Interrupts *************************************/
+	WWDG_IRQn           = 16,  /* Window Watchdog Interrupt                     */
+	OPA_IRQn            = 17,  /* OPA global interrupt                          */
+	FLASH_IRQn          = 18,  /* FLASH global Interrupt                        */
+	RCC_IRQn            = 19,  /* RCC global Interrupt                          */
+	EXTI7_0_IRQn        = 20,  /* External Line[7:0] Interrupts                 */
+	AWU_IRQn            = 21,  /* AWU (Auto Wake-Up) global Interrupt           */
+	DMA1_Channel1_IRQn  = 22,  /* DMA1 Channel 1 global Interrupt               */
+	DMA1_Channel2_IRQn  = 23,  /* DMA1 Channel 2 global Interrupt               */
+	DMA1_Channel3_IRQn  = 24,  /* DMA1 Channel 3 global Interrupt               */
+	DMA1_Channel4_IRQn  = 25,  /* DMA1 Channel 4 global Interrupt               */
+	DMA1_Channel5_IRQn  = 26,  /* DMA1 Channel 5 global Interrupt               */
+	DMA1_Channel6_IRQn  = 27,  /* DMA1 Channel 6 global Interrupt               */
+	DMA1_Channel7_IRQn  = 28,  /* DMA1 Channel 7 global Interrupt               */
+	ADC_IRQn            = 29,  /* ADC global Interrupt                          */
+	I2C1_EV_IRQn        = 30,  /* I2C1 Event Interrupt                          */
+	I2C1_ER_IRQn        = 31,  /* I2C1 Error Interrupt                          */
+	UART1_IRQn          = 32,  /* UART1 global Interrupt (no synchronous mode)  */
+	EXTI15_8_IRQn       = 33,  /* External Line[15:8] Interrupts                */
+	TIM1_BRK_IRQn       = 34,  /* TIM1 Break Interrupt                          */
+	TIM1_UP_IRQn        = 35,  /* TIM1 Update Interrupt                         */
+	TIM1_TRG_IRQn       = 36,  /* TIM1 Trigger Interrupt                        */
+	TIM1_CC_IRQn        = 37,  /* TIM1 Capture/Compare Interrupt                */
+	TIM2_IRQn           = 38,  /* TIM2 global Interrupt                         */
+	USBPD0_IRQn         = 39,  /* USB Power Delivery controller 0               */
+	USBPD0_WKUP_IRQn    = 40,  /* USBPD0 Wake-Up Interrupt                      */
+	USBPD1_IRQn         = 41,  /* USB Power Delivery controller 1               */
+	USBPD1_WKUP_IRQn    = 42,  /* USBPD1 Wake-Up Interrupt                      */
+	TIM3_IRQn           = 43,  /* TIM3 global Interrupt                         */
+	SPI1_IRQn           = 44,  /* SPI1 global Interrupt                         */
+	USBFS_IRQn          = 45,  /* USB Full-Speed global Interrupt               */
+	USBFS_WakeUp_IRQn   = 46,  /* USBFS Wake-Up Interrupt                       */
 } IRQn_Type;
 
 #define DEFAULT_INTERRUPT_VECTOR_CONTENTS "\n\
@@ -76,9 +75,9 @@ typedef enum IRQn
 	.word   0\n\
 	.word   SW_Handler               /* 14: Software interrupt */                        \n\
 	.word   0\n\
-	/* External Interrupts (slot 16 onward) */                                           \n\
+	/* External Interrupts */                                                            \n\
 	.word   WWDG_IRQHandler          /* 16: Window Watchdog */                           \n\
-	.word   OPA_IRQHandler           /* 17: OPA (moved from 48 on X035) */               \n\
+	.word   OPA_IRQHandler           /* 17: OPA */                                       \n\
 	.word   FLASH_IRQHandler         /* 18: Flash */                                     \n\
 	.word   RCC_IRQHandler           /* 19: RCC */                                       \n\
 	.word   EXTI7_0_IRQHandler       /* 20: EXTI Line[7:0] */                            \n\
@@ -105,41 +104,29 @@ typedef enum IRQn
 	.word   USBPD1_IRQHandler        /* 41: USBPD controller 1 */                        \n\
 	.word   USBPD1_WKUP_IRQHandler   /* 42: USBPD1 Wake-Up */                            \n\
 	.word   TIM3_IRQHandler          /* 43: TIM3 */                                      \n\
-	.word   SPI1_IRQHandler          /* 44: SPI1 (moved from 33 on X035) */              \n\
+	.word   SPI1_IRQHandler          /* 44: SPI1 */                                      \n\
 	.word   USBFS_IRQHandler         /* 45: USBFS */                                     \n\
 	.word   USBFSWakeUp_IRQHandler   /* 46: USBFS Wake-Up */                             \n\
 	.option   pop;\n"
-    
+
+
 /* memory mapped structure for SysTick */
 typedef struct
 {
-  __IO uint32_t CTLR;
-  __IO uint32_t SR;
-  union
-  {
-     struct
-     {
-        __IO uint32_t CNTL;
-        __IO uint32_t CNTH;
-        __IO uint32_t CMPL;
-        __IO uint32_t CMPH;
-     };
-     struct
-     {
-        __IO uint64_t CNT;
-        __IO uint64_t CMP;
-     };
-  };
+	__IO uint32_t CTLR;
+	__IO uint32_t SR;
+	__IO uint32_t CNT;
+	uint32_t RESERVED0;
+	__IO uint32_t CMP;
+	uint32_t RESERVED1;
 } SysTick_Type;
 
-#define funSysTick32() (SysTick->CNTL)
-#define funSysTickHigh() (SysTick->CNTH)
+#define funSysTick32() (SysTick->CNT)
 
 #endif /* __ASSEMBLER__*/
 
 #define HardFault_IRQn    EXC_IRQn
 
-	#define ADC1_2_IRQn       ADC_IRQn
 
 /* Standard Peripheral Library old definitions (maintained for legacy purpose) */
 #define HSI_Value             HSI_VALUE
@@ -147,134 +134,117 @@ typedef struct
 #define HSEStartUp_TimeOut    HSE_STARTUP_TIMEOUT
 
 #ifndef __ASSEMBLER__
+
 /* Analog to Digital Converter */
 typedef struct
 {
-    __IO uint32_t STATR;
-    __IO uint32_t CTLR1;
-    __IO uint32_t CTLR2;
-    __IO uint32_t SAMPTR1;
-    __IO uint32_t SAMPTR2;
-    __IO uint32_t IOFR1;
-    __IO uint32_t IOFR2;
-    __IO uint32_t IOFR3;
-    __IO uint32_t IOFR4;
-    __IO uint32_t WDHTR;
-    __IO uint32_t WDLTR;
-    __IO uint32_t RSQR1;
-    __IO uint32_t RSQR2;
-    __IO uint32_t RSQR3;
-    __IO uint32_t ISQR;
-    __IO uint32_t IDATAR1;
-    __IO uint32_t IDATAR2;
-    __IO uint32_t IDATAR3;
-    __IO uint32_t IDATAR4;
-    __IO uint32_t RDATAR;
-    __IO uint32_t CTLR3;
-    __IO uint32_t WDTR1;
-    __IO uint32_t WDTR2;
-    __IO uint32_t WDTR3;
+	__IO uint32_t STATR;
+	__IO uint32_t CTLR1;
+	__IO uint32_t CTLR2;
+	__IO uint32_t SAMPTR1;
+	__IO uint32_t SAMPTR2;
+	__IO uint32_t IOFR1;
+	__IO uint32_t IOFR2;
+	__IO uint32_t IOFR3;
+	__IO uint32_t IOFR4;
+	__IO uint32_t WDHTR;
+	__IO uint32_t WDLTR;
+	__IO uint32_t RSQR1;
+	__IO uint32_t RSQR2;
+	__IO uint32_t RSQR3;
+	__IO uint32_t ISQR;
+	__IO uint32_t IDATAR1;
+	__IO uint32_t IDATAR2;
+	__IO uint32_t IDATAR3;
+	__IO uint32_t IDATAR4;
+	__IO uint32_t RDATAR;
+	__IO uint32_t CTLR3;
+	__IO uint32_t WDTR1;
+	__IO uint32_t WDTR2;
+	__IO uint32_t AVG_TR;
+	__IO uint32_t DLYR;
+	__IO uint32_t AVG_DR;
+	__IO uint32_t RDATAR2;
+	__IO uint32_t RDATAR3;
+	__IO uint32_t RDATAR4;
 } ADC_TypeDef;
-
-
-
-/* CRC Calculation Unit */
-typedef struct
-{
-	__IO uint32_t DATAR;
-	__IO uint8_t  IDATAR;
-	uint8_t       RESERVED0;
-	uint16_t      RESERVED1;
-	__IO uint32_t CTLR;
-} CRC_TypeDef;
-
 
 /* Debug MCU */
 typedef struct
 {
-    __IO uint32_t CFGR0;
-    __IO uint32_t CFGR1;
+	__IO uint32_t CR1;
+	__IO uint32_t CR2;
 } DBGMCU_TypeDef;
 
 /* DMA Controller */
 typedef struct
 {
-    __IO uint32_t CFGR;
-    __IO uint32_t CNTR;
-    __IO uint32_t PADDR;
-    __IO uint32_t MADDR;
+	__IO uint32_t CFGR;
+	__IO uint32_t CNTR;
+	__IO uint32_t PADDR;
+	__IO uint32_t MADDR;
 } DMA_Channel_TypeDef;
 
 typedef struct
 {
-    __IO uint32_t INTFR;
-    __IO uint32_t INTFCR;
+	__IO uint32_t INTFR;
+	__IO uint32_t INTFCR;
 } DMA_TypeDef;
 
 /* External Interrupt/Event Controller */
 typedef struct
 {
-    __IO uint32_t INTENR;
-    __IO uint32_t EVENR;
-    __IO uint32_t RTENR;
-    __IO uint32_t FTENR;
-    __IO uint32_t SWIEVR;
-    __IO uint32_t INTFR;
+	__IO uint32_t INTENR;
+	__IO uint32_t EVENR;
+	__IO uint32_t RTENR;
+	__IO uint32_t FTENR;
+	__IO uint32_t SWIEVR;
+	__IO uint32_t INTFR;
 } EXTI_TypeDef;
 
 /* FLASH Registers */
 typedef struct
 {
-    __IO uint32_t ACTLR;
-    __IO uint32_t KEYR;
-    __IO uint32_t OBKEYR;
-    __IO uint32_t STATR;
-    __IO uint32_t CTLR;
-    __IO uint32_t ADDR;
-    __IO uint32_t RESERVED;
-    __IO uint32_t OBR;
-    __IO uint32_t WPR;
-    __IO uint32_t MODEKEYR;
-    __IO uint32_t BOOT_MODEKEYR;
+	__IO uint32_t ACTLR;
+	__IO uint32_t KEYR;
+	__IO uint32_t OBKEYR;
+	__IO uint32_t STATR;
+	__IO uint32_t CTLR;
+	__IO uint32_t ADDR;
+	__IO uint32_t RESERVED;
+	__IO uint32_t OBR;
+	__IO uint32_t WPR;
+	__IO uint32_t MODEKEYR;
+	uint32_t      RESERVED0;
+	uint16_t      RESERVED1;
+	uint8_t       RESERVED2;
+	__IO uint8_t  CTLR2;
 } FLASH_TypeDef;
 
 /* Option Bytes Registers */
 typedef struct
 {
-    __IO uint16_t RDPR;
-    __IO uint16_t USER;
-    __IO uint16_t Data0;
-    __IO uint16_t Data1;
-    __IO uint16_t WRPR0;
-    __IO uint16_t WRPR1;
-    __IO uint16_t WRPR2;
-    __IO uint16_t WRPR3;
+	__IO uint16_t RDPR;
+	__IO uint16_t USER;
+	__IO uint16_t Data0;
+	__IO uint16_t Data1;
+	__IO uint16_t WRPR0;
+	__IO uint16_t WRPR1;
+	__IO uint16_t WRPR2;
+	__IO uint16_t WRPR3;
 } OB_TypeDef;
 
+/* Electronic Signature */
 typedef struct
 {
 	__IO uint16_t CAP;
 	__IO uint16_t RES1;
-	__IO uint32_t RES2;
 	__IO uint32_t UID0;
 	__IO uint32_t UID1;
 	__IO uint32_t UID2;
-	__IO uint32_t RES3;
-} ESG_TypeDef;
+} ESIG_TypeDef;
 
-typedef struct
-{
-    union
-    {   
-        __I uint32_t CHIPID;
-        struct 
-        {
-            __I uint16_t REVID;
-	        __I uint16_t DEVID;
-        };
-    };
-} INFO_TypeDef;
-
+// validated bluraf 2026.10.24
 
 /* General Purpose I/O */
 typedef enum
@@ -393,13 +363,11 @@ typedef struct
 {
 	__IO uint32_t CFGLR;
 	__IO uint32_t CFGHR;
-	__I  uint32_t INDR;
+	__IO uint32_t INDR;
 	__IO uint32_t OUTDR;
 	__IO uint32_t BSHR;
 	__IO uint32_t BCR;
 	__IO uint32_t LCKR;
-	__IO uint32_t CFGXR;
-	__IO uint32_t BSXR;
 } GPIO_TypeDef;
 
 #define DYN_GPIO_READ(gpio, field) ((GPIO_##field##_t) { .__FULL = gpio->field })
@@ -4048,16 +4016,17 @@ extern "C" {
 #define AWU_Prescaler_61440   ((uint32_t)0x0000000F)
 
 
-/* ch32v00x_dbgmcu.h ---------------------------------------------------------*/
-/* CFGR0 Register */
+/* ch32m030_dbgmcu.h ---------------------------------------------------------*/
+/* CR1 Register */
+#define DBGMCU_WWDG_STOP             ((uint32_t)0x00000002)
+#define DBGMCU_TIM1_STOP             ((uint32_t)0x00000010)
+#define DBGMCU_TIM2_STOP             ((uint32_t)0x00000020)
+#define DBGMCU_TIM3_STOP             ((uint32_t)0x00000040)
+
+/* CR2 Register */
 #define DBGMCU_SLEEP                 ((uint32_t)0x00000001)
 #define DBGMCU_STOP                  ((uint32_t)0x00000002)
 #define DBGMCU_STANDBY               ((uint32_t)0x00000004)
-#define DBGMCU_IWDG_STOP             ((uint32_t)0x00000100)
-#define DBGMCU_WWDG_STOP             ((uint32_t)0x00000200)
-#define DBGMCU_TIM1_STOP             ((uint32_t)0x00001000)
-#define DBGMCU_TIM2_STOP             ((uint32_t)0x00002000)
-#define DBGMCU_TIM3_STOP             ((uint32_t)0x00004000)
 
 /* ch32v00x_dma.h ------------------------------------------------------------*/
 
